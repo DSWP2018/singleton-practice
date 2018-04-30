@@ -4,6 +4,16 @@ import java.util.ArrayList;
 
 public class Cart {
     ArrayList<Product> products = new ArrayList<Product>();
+    private static Cart uniqueInstance;
+
+    private Cart(){
+    }
+
+    public static Cart getInstance(){
+        if(uniqueInstance == null)
+            uniqueInstance = new Cart();
+        return uniqueInstance;
+    }
 
     public void addProduct(Product product){
         products.add(product);
@@ -25,4 +35,11 @@ public class Cart {
         }
         return total;
     }
+
+    public void clearProducts(){
+        products.clear();
+        uniqueInstance = null;
+    }
+
+
 }
