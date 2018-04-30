@@ -40,7 +40,7 @@ public class Product {
     }
 
     public Cart addToCart(){
-        Cart myCart = new Cart();
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);

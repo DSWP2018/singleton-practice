@@ -4,6 +4,18 @@ import java.util.ArrayList;
 
 public class Cart {
     ArrayList<Product> products = new ArrayList<Product>();
+    static Cart instance;
+
+    public static Cart getInstance(){
+        if(instance == null){
+            instance = new Cart();
+        }
+        return instance;
+    }
+    
+    public void clearCart(){
+        instance = null;
+    }
 
     public void addProduct(Product product){
         products.add(product);
