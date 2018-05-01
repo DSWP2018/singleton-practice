@@ -1,46 +1,95 @@
 package com.iteso.singleton;
 
+/**
+ * Clase para crear y manipular productos.
+ */
 public class Product {
+    /**
+     * Nombre del producto.
+     */
     private String name;
+    /**
+     * Descripcion del producto.
+     */
     private String description;
+    /**
+     * Precio del producto.
+     */
     private double price;
+    /**
+     * Cantidad de articulos disponibles del producto.
+     */
     private int stock;
 
-    public String getName() {
+    /**
+     * Método para obtener el nombre del producto.
+     * @return nombre.
+     */
+    public final String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * Método para establecer el nombre del producto.
+     * @param nombre .
+     */
+    public final void setName(final String nombre) {
+        this.name = nombre;
     }
-
-    public String getDescription() {
+    /**
+     * Método para obtener la descripcion del producto.
+     * @return descripcion.
+     */
+    public final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    /**
+     * Método para establecer la descripcion del producto.
+     * @param descripcion .
+     */
+    public final void setDescription(final String descripcion) {
+        this.description = descripcion;
     }
 
-    public double getPrice() {
+    /**
+     * Método para obtener el precio del producto.
+     * @return precio.
+     */
+    public final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * Método para establecer el precio del producto.
+     * @param precio .
+     */
+    public final void setPrice(final double precio) {
+        this.price = precio;
     }
 
-    public int getStock() {
+    /**
+     * Método para obtener el stock del producto.
+     * @return stock.
+     */
+    public final int getStock() {
 
         return stock;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     * Método para establecer el stock del producto.
+     * @param mstock .
+     */
+    public final void setStock(final int mstock) {
+        this.stock = mstock;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    /**
+     * Método para añadir productos al carro.
+     * @return carro con producto añadido.
+     */
+    public final Cart addToCart() {
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
