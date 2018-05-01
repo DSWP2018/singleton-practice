@@ -1,45 +1,47 @@
 package com.iteso.singleton;
-
+/**clase producto. */
 public class Product {
-    private String name;
-    private String description;
-    private double price;
-    private int stock;
-
-    public String getName() {
+    /**Inicializacion de variables. */
+    private String name; /**Nombre del producto. */
+    private String description; /**Descripcion del producto. */
+    private double price; /**Precio del prodcuto. */
+    private int stock; /**Stock del producto. */
+    /**Funcion get del nombre. */
+    /**@return name. */
+    public final String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /**@param name1 para setear el nombre. */
+    public final void setName(final String name1) {
+        this.name = name1;
     }
-
-    public String getDescription() {
+    /**@return description. */
+    public final String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    /**@param description1  descriocion del producto. */
+    public final void setDescription(final String description1) {
+        this.description = description1;
     }
-
-    public double getPrice() {
+    /**@return price del producto. */
+    public final double getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
+    /**@param price1  del producto. */
+    public final void setPrice(final double price1) {
+        this.price = price1;
     }
-
-    public int getStock() {
+    /**@return stock del producto. */
+    public final int getStock() {
 
         return stock;
     }
-
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**@param stock1 del producto. */
+    public final void setStock(final int stock1) {
+        this.stock = stock1;
     }
-
-    public void addToCart(){
+    /**Funcion para agregar al carro el producto. */
+    public final void addToCart() {
         Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();

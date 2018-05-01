@@ -3,9 +3,15 @@ package com.iteso.singleton;
 import com.iteso.singleton.products.CocaCola;
 import com.iteso.singleton.products.Lechuguilla;
 import com.iteso.singleton.products.Monster;
+/**Clase OnlineStore que simula una tienda. */
+public final class OnlineStore {
+    /**Función main para probar el código. */
+    /**Constructor. */
+    private OnlineStore() {
 
-public class OnlineStore {
-    public static void main(String[] args) {
+    }
+    /**@param args asdas.*/
+    public static void main(final String[] args) {
         Cart cart = Cart.getInstance();
         //Product cereal = new Product();
        /* cereal.setDescription("caja de cereal en presentación de 840g");
