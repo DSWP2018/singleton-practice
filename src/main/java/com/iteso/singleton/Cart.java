@@ -1,9 +1,20 @@
 package com.iteso.singleton;
 
+
 import java.util.ArrayList;
 
 public class Cart {
-    ArrayList<Product> products = new ArrayList<Product>();
+    ArrayList<Product> products;
+    private static Cart uniqueInstance;
+
+    private Cart(){
+    }
+
+    public static Cart getInstance(){
+        if(uniqueInstance == null)
+            uniqueInstance = new Cart();
+        return uniqueInstance;
+    }
 
     public void addProduct(Product product){
         products.add(product);
@@ -11,6 +22,12 @@ public class Cart {
     public void removeProduct(Product product){
         products.remove(product);
     }
+
+    public void clearProducts(){
+        products.clear();
+        uniqueInstance = null;
+    }
+
 
     public void listProductsInCart(){
         for (Product product: products) {
