@@ -6,44 +6,65 @@ public class Product {
     private double price;
     private int stock;
 
-    public String getName() {
+    /**
+     *
+     * @return getName
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    public final void setName(final String hName) {
+        this.name = hName;
     }
 
-    public String getDescription() {
+    /**
+     *
+     * @return get Description
+     */
+    public final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public final void setDescription(final String hDescription) {
+        this.description = hDescription;
     }
 
-    public double getPrice() {
+    /**
+     *
+     * @return price
+     */
+    public  final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+
+    public final void setPrice(final double hPrice) {
+        this.price = hPrice;
     }
 
-    public int getStock() {
+    /**
+     *
+     * @return stock
+     */
+    public final int getStock() {
 
         return stock;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     *
+     * @param hStock set Stock
+     */
+    public final void setStock(final int hStock) {
+        this.stock = hStock;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    public final void addToCart() {
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
     }
 }
