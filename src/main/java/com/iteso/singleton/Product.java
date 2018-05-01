@@ -1,6 +1,7 @@
 package com.iteso.singleton;
 
 public class Product {
+
     private String name;
     private String description;
     private double price;
@@ -39,11 +40,20 @@ public class Product {
         this.stock = stock;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+
+    public void addToCart(){
+        Cart myCart = Cart.getUniqueInstance();
         myCart.addProduct(this);
+        //myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
+
     }
+
+
+
+
+
+
+
 }
