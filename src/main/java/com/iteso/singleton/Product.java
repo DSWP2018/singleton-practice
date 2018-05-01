@@ -39,11 +39,10 @@ public class Product {
         this.stock = stock;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    public void addToCart(){
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
     }
 }
