@@ -1,46 +1,98 @@
 package com.iteso.singleton;
 
+/**
+ * Clase prodducto.
+ */
 public class Product {
+    /**
+     * Variable de nombre.
+     */
     private String name;
+    /**
+     * Varibale de descripción.
+     */
     private String description;
+    /**
+     * Variable de precio.
+     */
     private double price;
+    /**
+     * Variable de stock.
+     */
     private int stock;
 
-    public String getName() {
+    /**
+     * Metodo para el nobmre.
+     *
+     * @return regrea el nombre.
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * Setter.
+     * @param myName nombre.
+     */
+    public final void setName(final String myName) {
+        this.name = myName;
     }
 
-    public String getDescription() {
+    /**
+     * Getter.
+     * @return descripción.
+     */
+    public final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    /**
+     * setter.
+     * @param myDescription del producto.
+     */
+    public final void setDescription(final String myDescription) {
+        this.description = myDescription;
     }
 
-    public double getPrice() {
+    /**
+     * getter.
+     * @return price.
+     */
+    public final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * setter.
+     * @param myPrice del producto.
+     */
+    public final void setPrice(final double myPrice) {
+        this.price = myPrice;
     }
 
-    public int getStock() {
+    /**
+     * Getter.
+     * @return stock.
+     */
+    public final int getStock() {
 
         return stock;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     * Setter.
+     * @param myStock del prdocuto.
+     */
+    public final void setStock(final int myStock) {
+        this.stock = myStock;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    /**
+     * Agregamos el procucto al carro.
+     * @return el carro.
+     */
+    public final Cart addToCart() {
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
