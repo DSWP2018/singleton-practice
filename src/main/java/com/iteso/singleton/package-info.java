@@ -1,0 +1,2 @@
+/** */
+package com.iteso.singleton;

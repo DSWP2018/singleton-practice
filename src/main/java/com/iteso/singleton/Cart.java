@@ -2,27 +2,76 @@ package com.iteso.singleton;
 
 import java.util.ArrayList;
 
-public class Cart {
-    ArrayList<Product> products = new ArrayList<Product>();
+/** */
+public final class Cart {
+    /** */
+    private static Cart theOneAndOnlyCart;
+    /** */
+    private ArrayList<Product> products = new ArrayList<Product>();
 
-    public void addProduct(Product product){
+    /** */
+    private Cart() {
+
+    }
+
+    /**
+     * @return Cart cart
+     */
+    public static Cart getCartInstance() {
+        if (theOneAndOnlyCart == null) {
+            theOneAndOnlyCart = new Cart();
+        }
+        return theOneAndOnlyCart;
+    }
+
+    /** */
+    public static void clearInstance() {
+        theOneAndOnlyCart = null;
+    }
+
+    /**
+     * @param product product
+     */
+    public void addProduct(final Product product) {
         products.add(product);
     }
-    public void removeProduct(Product product){
+
+    /**
+     * @param product product
+     */
+    public void removeProduct(final Product product) {
         products.remove(product);
     }
 
-    public void listProductsInCart(){
-        for (Product product: products) {
+    /** */
+    public void listProductsInCart() {
+        for (Product product : products) {
             System.out.println(product.getName());
         }
     }
-    public double getCartTotal(){
+
+    /**
+     * @return double double
+     */
+    public double getCartTotal() {
         double total = 0;
-        for (Product product :
-                products) {
+        for (Product product : products) {
             total += product.getPrice();
         }
         return total;
+    }
+
+    /**
+     * @return the products
+     */
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    /**
+     * @param pr final the products to set
+     */
+    public void setProducts(final ArrayList<Product> pr) {
+        this.products = pr;
     }
 }

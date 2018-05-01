@@ -1,49 +1,77 @@
 package com.iteso.singleton;
 
-public class Product {
+/** */
+public abstract class Product {
+    /** */
     private String name;
+    /** */
     private String description;
+    /** */
     private double price;
+    /** */
     private int stock;
 
-    public String getName() {
+    /**
+     * @return String String
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * @param n n
+     */
+    public final void setName(final String n) {
+        this.name = n;
     }
 
-    public String getDescription() {
+    /**
+     * @return String String
+     */
+    public final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    /**
+     * @param desc desc
+     */
+    public final void setDescription(final String desc) {
+        this.description = desc;
     }
 
-    public double getPrice() {
+    /**
+     * @return double double
+     */
+    public final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * @param pr pr
+     */
+    public final void setPrice(final double pr) {
+        this.price = pr;
     }
 
-    public int getStock() {
-
+    /**
+     * @return int int
+     */
+    public final int getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     * @param st st
+     */
+    public final void setStock(final int st) {
+        this.stock = st;
     }
 
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    /** */
+    public final void addToCart() {
+        Cart myCart = Cart.getCartInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
     }
 }
