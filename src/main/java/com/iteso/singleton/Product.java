@@ -34,7 +34,7 @@ public class Product {
      * @param hName setName
      */
     public final void setName(final String hName) {
-        this.name = name;
+        this.name = hName;
     }
 
     /**
@@ -50,7 +50,7 @@ public class Product {
      * @param hDescription product desc
      */
     public final void setDescription(final String hDescription) {
-        this.description = description;
+        this.description = hDescription;
     }
 
     /**
@@ -66,7 +66,7 @@ public class Product {
      * @param hPrice set the price
      */
     public final void setPrice(final double hPrice) {
-        this.price = price;
+        this.price = hPrice;
     }
 
     /**
@@ -83,7 +83,7 @@ public class Product {
      * @param hStock set Stock
      */
     public final void setStock(final int hStock) {
-        this.stock = stock;
+        this.stock = hStock;
     }
 
     /**
