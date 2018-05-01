@@ -7,12 +7,12 @@ import com.iteso.singleton.products.Monster;
 /**
  *
  */
-public class OnlineStore {
+public final class OnlineStore {
     /**
      *
      * @param args jiji.
      */
-    public static void main(String... args){
+    public static void main(final String... args) {
         Cart cart = Cart.getInstance();
 
         CocaCola coquita = new CocaCola();
@@ -25,6 +25,13 @@ public class OnlineStore {
 
         cart.listProductsInCart();
         System.out.println("Total Carrito " + cart.getCartTotal());
+
+    }
+
+    /**
+     *
+     */
+    private  OnlineStore() {
 
     }
 }

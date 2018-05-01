@@ -1,45 +1,95 @@
 package com.iteso.singleton;
 
+/**
+ *
+ */
 public class Product {
+    /**
+     *
+     */
     private String name;
+    /**
+     *
+     */
     private String description;
+    /**
+     *
+     */
     private double price;
+    /**
+     *
+     */
     private int stock;
 
-    public String getName() {
+    /**
+     *
+     * @return getName
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param hName setName
+     */
+    public final void setName(final String hName) {
         this.name = name;
     }
 
-    public String getDescription() {
+    /**
+     *
+     * @return get Description
+     */
+    public final String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    /**
+     *
+     * @param hDescription product desc
+     */
+    public final void setDescription(final String hDescription) {
         this.description = description;
     }
 
-    public double getPrice() {
+    /**
+     *
+     * @return price
+     */
+    public  final double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    /**
+     *
+     * @param hPrice set the price
+     */
+    public final void setPrice(final double hPrice) {
         this.price = price;
     }
 
-    public int getStock() {
+    /**
+     *
+     * @return stock
+     */
+    public final int getStock() {
 
         return stock;
     }
 
-    public void setStock(int stock) {
+    /**
+     *
+     * @param hStock set Stock
+     */
+    public final void setStock(final int hStock) {
         this.stock = stock;
     }
 
-    public void addToCart(){
+    /**
+     * add to cart.
+     */
+    public final void addToCart() {
         Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();

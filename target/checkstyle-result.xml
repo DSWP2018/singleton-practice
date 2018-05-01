@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.18">
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/OnlineStore.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/package-info.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/Product.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/products/CocaCola.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/products/Lechuguilla.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/products/Monster.java">
+</file>
+<file name="/Users/carmenmartineznuno/Documents/ITESO/6to Semestre/Diseño de Software/Practicas/singleton-practice/src/main/java/com/iteso/singleton/products/package-info.java">
+</file>
+</checkstyle>
