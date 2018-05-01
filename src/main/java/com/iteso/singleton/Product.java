@@ -1,46 +1,78 @@
 package com.iteso.singleton;
-
+/**
+ *
+ * */
 public class Product {
+    /**
+     * name.
+     * */
     private String name;
+    /**
+     * description.
+     * */
     private String description;
+    /**
+     * price.
+     * */
     private double price;
+    /**
+     * stock.
+     * */
     private int stock;
-
-    public String getName() {
+    /**
+     * @return name
+     * */
+    public final String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * @param sName parametro.
+     * */
+    public final void setName(final String sName) {
+        this.name = sName;
     }
-
-    public String getDescription() {
+    /**
+     * @return description
+     * */
+    public final String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    /**
+     * @param sDescription parametro.
+     * */
+    public final void setDescription(final String sDescription) {
+        this.description = sDescription;
     }
-
-    public double getPrice() {
+    /**
+     * @return price
+     * */
+    public final double getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * @param sPrice parametro.
+     * */
+    public final void setPrice(final double sPrice) {
+        this.price = sPrice;
     }
-
-    public int getStock() {
+    /**
+     * @return stock
+     * */
+    public final int getStock() {
 
         return stock;
     }
-
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     * @param sStock parametro.
+     * */
+    public final void setStock(final int sStock) {
+        this.stock = sStock;
     }
-
-    public Cart addToCart(){
-        Cart myCart = new Cart();
+    /**
+     * @return myCart
+     * */
+    public final Cart addToCart() {
+        Cart myCart = Cart.getInstance();
         myCart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
