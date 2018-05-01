@@ -3,7 +3,25 @@ package com.iteso.singleton;
 import java.util.ArrayList;
 
 public class Cart {
-    ArrayList<Product> products = new ArrayList<Product>();
+
+    public ArrayList<Product> products;
+    private static Cart uniqueInstance = null;
+
+    private Cart(){
+        products = new ArrayList<Product>();
+    }
+
+    public static Cart getInstance(){
+        if(uniqueInstance == null){
+            uniqueInstance = new Cart();
+        }
+        return uniqueInstance;
+    }
+
+    public void clearCart(){
+        products.clear();
+        uniqueInstance = null;
+    }
 
     public void addProduct(Product product){
         products.add(product);
