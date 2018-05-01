@@ -4,9 +4,20 @@ import com.iteso.singleton.products.CocaCola;
 import com.iteso.singleton.products.Lechuguilla;
 import com.iteso.singleton.products.Monster;
 
-public class OnlineStore {
+/**
+ * Clase OnlineStore que nos permite darle funcionalidad al Cart.
+ */
+public final class OnlineStore {
 
-    public static void main(String[] args){
+    /**Constructor de la clase.*/
+    private OnlineStore() {
+
+    }
+
+    /**Método main.
+     * @param args necesario para el método.
+     */
+    public static void main(final String[] args) {
         Cart cart = Cart.getInstance();
         CocaCola coca = new CocaCola();
         coca.addToCart();
@@ -18,7 +29,8 @@ public class OnlineStore {
         cart.listProductsInCart();
         System.out.println("Precio total: "  + cart.getCartTotal() + "\n");
         cart.clearCart();
-        System.out.println("\nListado de productos después de limpiar el carrito:");
+        System.out.println("\nListado de productos después de "
+                + "limpiar el carrito:");
         cart.listProductsInCart();
     }
 

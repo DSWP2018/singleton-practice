@@ -2,43 +2,67 @@ package com.iteso.singleton;
 
 import java.util.ArrayList;
 
-public class Cart {
-
-    public ArrayList<Product> products;
+/**
+ * Clase Cart implementada como Singleton.
+ */
+public final class Cart {
+    /**Lista de productos en el carrito.*/
+    private ArrayList<Product> products;
+    /**Instancia única.*/
     private static Cart uniqueInstance = null;
 
-    private Cart(){
+    /**Constructor de la clase.*/
+    private Cart() {
         products = new ArrayList<Product>();
     }
 
-    public static Cart getInstance(){
-        if(uniqueInstance == null){
+    /**Método para obtener la instancia única de la clase.
+     * @return un objeto tipo Cart.
+     */
+    public static Cart getInstance() {
+        if (uniqueInstance == null) {
             uniqueInstance = new Cart();
         }
         return uniqueInstance;
     }
 
-    public void clearCart(){
+    /**Método para limpiar el carrito.*/
+    public void clearCart() {
         products.clear();
         uniqueInstance = null;
     }
 
-    public void addProduct(Product product){
+    /**
+     * Método para añadir un producto al carrito.
+     * @param product para enviarle un producto al método.
+     */
+    public void addProduct(final Product product) {
         products.add(product);
     }
-    public void removeProduct(Product product){
+
+    /**
+     * Método para eliminar un producto del carrito.
+     * @param product para enviarle un producto al método.
+     */
+    public void removeProduct(final Product product) {
         products.remove(product);
     }
 
-    public void listProductsInCart(){
+    /**Método para obtener la lista de productos en el carrito.*/
+    public void listProductsInCart() {
         for (Product product: products) {
             System.out.println(product.getName());
         }
     }
-    public double getCartTotal(){
+
+    /**
+     * Método para obtener el precio total de los productos
+     * que contiene el carrito.
+     * @return un número tipo double para mostrar el precio.
+     */
+    public double getCartTotal() {
         double total = 0;
-        for (Product product :
-                products) {
+        for (Product product : products) {
             total += product.getPrice();
         }
         return total;
