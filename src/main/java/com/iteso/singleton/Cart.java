@@ -5,6 +5,13 @@ import java.util.ArrayList;
 public class Cart {
     ArrayList<Product> products = new ArrayList<Product>();
 
+    //Instancia estática de la clase
+    private static Cart cart =  new Cart();
+    //Constructor privado vacío
+    private Cart(){
+
+    }
+
     public void addProduct(Product product){
         products.add(product);
     }
@@ -25,4 +32,15 @@ public class Cart {
         }
         return total;
     }
+
+    //Get the only object available
+    public static Cart getCart(){
+        return cart;
+    }
+
+    public void clear()
+    {
+        cart = null;
+    }
+
 }

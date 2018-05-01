@@ -40,10 +40,10 @@ public class Product {
     }
 
     public Cart addToCart(){
-        Cart myCart = new Cart();
-        myCart.addProduct(this);
+        Cart cart = Cart.getCart();
+        cart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
+        return cart;
     }
 }
