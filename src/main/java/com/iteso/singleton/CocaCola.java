@@ -1,15 +1,18 @@
-package com.iteso.singleton.products;
+package com.iteso.singleton;
 
-import com.iteso.singleton.Product;
-
+/**
+ Class CocaCola.**/
 public class CocaCola extends Product {
-
+    /**@VAR INT.**/
     public static final int STOCK = 100;
+    /**@VAR double.**/
     public static final double PRICE = 12.5;
+    /**@VAR string.**/
     public static final String DESCRIPTION = "Refresco sabor cola con azucar";
+    /**@VAR string.**/
     public static final String NAME = "Coca-Cola";
-
-    public CocaCola(){
+    /**Constructor.**/
+    public CocaCola() {
         setName(NAME);
         setDescription(DESCRIPTION);
         setPrice(PRICE);

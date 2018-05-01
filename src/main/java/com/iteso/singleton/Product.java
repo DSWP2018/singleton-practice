@@ -1,49 +1,60 @@
 package com.iteso.singleton;
-
+/**
+ Class Product.**/
 public class Product {
+    /**@var String.**/
     private String name;
+    /**@VAR String.**/
     private String description;
+    /**@var double.**/
     private double price;
+    /**@var int.**/
     private int stock;
-
-    public String getName() {
+    /**@return String.**/
+    public final String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /**@param name1 hhh.**/
+    public final void setName(final String name1) {
+        this.name = name1;
     }
-
-    public String getDescription() {
+    /**@return String.**/
+    public final String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    /**
+     * @param description1 jhh.
+     **/
+    public final void setDescription(final String description1) {
+        this.description = description1;
     }
-
-    public double getPrice() {
+    /**@return double.**/
+    public final double getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * @param price1 jjjj.
+     * **/
+    public final void setPrice(final double price1) {
+        this.price = price1;
     }
-
-    public int getStock() {
-
+    /**@return int.**/
+    public final int getStock() {
         return stock;
     }
-
-    public void setStock(int stock) {
-        this.stock = stock;
+    /**
+     * @param stock1 hhh.
+     * **/
+    public final void setStock(final int stock1) {
+        this.stock = stock1;
     }
-
-    public Cart addToCart(){
-        Cart myCart = new Cart();
-        myCart.addProduct(this);
+    /**@return Cart.**/
+    public final Cart addToCart() {
+        Cart mycart = null;
+        mycart.getInstance();
+        mycart.addProduct(this);
         int tempStock = getStock();
         setStock(tempStock - 1);
-        return myCart;
+        return mycart;
     }
 }

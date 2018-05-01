@@ -1,25 +1,58 @@
 package com.iteso.singleton;
 
 import java.util.ArrayList;
+/**
+ Class Cart.**/
+public final class Cart {
+    /**
+     @VAR products.**/
+    private ArrayList<Product> products = new ArrayList<Product>();
+    /**
+     @VAR Cart.**/
+    private static Cart uniqueInstance;
+    /**
+     Constructor.**/
+    private Cart() {
+        products = new ArrayList();
+    }
+    /**
+     @return Cart.**/
+    public static Cart getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Cart();
+        }
+        return uniqueInstance;
+    }
+    /**
+     clear.**/
+    public static void clear() {
+        uniqueInstance = null;
+    }
 
-public class Cart {
-    ArrayList<Product> products = new ArrayList<Product>();
-
-    public void addProduct(Product product){
+    /**
+     @param product add.**/
+    public void addProduct(final Product product) {
         products.add(product);
     }
-    public void removeProduct(Product product){
+    /**
+     @param product g.
+     **/
+    public void removeProduct(final Product product) {
         products.remove(product);
     }
-
-    public void listProductsInCart(){
+    /**
+     list.**/
+    public void listProductsInCart() {
         for (Product product: products) {
             System.out.println(product.getName());
         }
     }
-    public double getCartTotal(){
+    /**
+     @return double.**/
+    public double getCartTotal() {
         double total = 0;
-        for (Product product :
+        for (Product product
+                :
                 products) {
             total += product.getPrice();
         }
